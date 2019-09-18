@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Musicians Ahoy !</title>
+</head>
+<body>
+  <h1>Click on one of the links the see a musician or instrument list</h1>
+  <ul>
+    <li>
+      <a href="/musicians">Musicians</a>
+    </li>
+    <li>  
+      <a href="/instruments">Instruments</a>
+    </li>
+  </ul>
+  <h2>Or add a new musician using this form</h2>
+  <form method="POST" action="/musicians">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="stage_name" placeholder="Stage name">
+    <select name="instrument">
+      <option value="0">Instrumentless</option>
+      <% for(const instrument of instruments) { %>
+        <option value="<%= instrument.id %>"><%= instrument.name %></option>
+      <% } %>
+    </select>
+    <input type="submit">
+  </form>
+</body>
+</html>

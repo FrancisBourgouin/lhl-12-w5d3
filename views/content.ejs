@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <h1>Hey here's a list of musicians !</h1>
+  <ul>
+    <% 
+      for(const musician of musicians) { 
+      const {name, stage_name, instrument_id, instrument_name, instrument_brand} = musician
+    %>
+    <li><%= `We have ${name} also known as ${stage_name} who plays ${instrument_name} made by ${instrument_brand}.` %></li>
+    <% } %>
+  </ul>
+</body>
+</html>
